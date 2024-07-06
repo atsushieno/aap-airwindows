@@ -1,0 +1,6 @@
+[submodule "external/aap-core"]
+	path = external/aap-core
+	url = https://github.com/atsushieno/aap-core.git
+[submodule "external/airwin2rack"]
+	path = external/airwin2rack
+	url = https://github.com/baconpaul/airwin2rack.git

@@ -1,0 +1,10 @@
+<devices>
+    <!--
+    <device name="MDA" manufacturer="androidaudioplugin.org" product="aap-mda-lv2">
+        <input-port name="MDA DX10" />
+        <input-port name="MDA ePiano" />
+        <input-port name="MDA JX10" />
+        <input-port name="MDA Piano" />
+    </device>
+    -->
+</devices>
