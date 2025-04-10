@@ -1,4 +1,4 @@
-<plugins xmlns="urn:org.androidaudioplugin.core">
+<plugins xmlns="urn:org.androidaudioplugin.core" xmlns:pp="urn:org.androidaudioplugin.port">
   <plugin name='ADClip7' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:ADClip7:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
@@ -72,6 +72,33 @@
     </extensions>
   </plugin>
   <plugin name='Air3' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Air3:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='Air4' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Air4:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='AngleEQ' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:AngleEQ:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='AngleFilter' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:AngleFilter:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
       <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
@@ -197,7 +224,34 @@
       <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
     </extensions>
   </plugin>
+  <plugin name='Baxandall3' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Baxandall3:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
   <plugin name='Beam' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Beam:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='BezEQ' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:BezEQ:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='BeziComp' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:BeziComp:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
       <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
@@ -459,6 +513,24 @@
     </extensions>
   </plugin>
   <plugin name='Calibre' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Calibre:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='Cans' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Cans:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='CansAW' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:CansAW:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
       <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
@@ -971,6 +1043,15 @@
       <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
     </extensions>
   </plugin>
+  <plugin name='ConsoleXPre' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:ConsoleXPre:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
   <plugin name='ConsoleXSubIn' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:ConsoleXSubIn:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
@@ -1080,6 +1161,15 @@
     </extensions>
   </plugin>
   <plugin name='DeBess' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:DeBess:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='DeCrackle' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:DeCrackle:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
       <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
@@ -1205,6 +1295,15 @@
       <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
     </extensions>
   </plugin>
+  <plugin name='Disintegrate' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Disintegrate:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
   <plugin name='Distance' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Distance:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
@@ -1322,6 +1421,24 @@
       <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
     </extensions>
   </plugin>
+  <plugin name='DubPlate' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:DubPlate:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='DubPlate2' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:DubPlate2:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
   <plugin name='DubSub' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:DubSub:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
@@ -1331,7 +1448,34 @@
       <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
     </extensions>
   </plugin>
+  <plugin name='DubSub2' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:DubSub2:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
   <plugin name='Dubly' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Dubly:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='Dubly2' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Dubly2:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='Dubly3' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Dubly3:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
       <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
@@ -1404,6 +1548,15 @@
     </extensions>
   </plugin>
   <plugin name='ElectroHat' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:ElectroHat:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='Elliptical' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Elliptical:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
       <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
@@ -1538,6 +1691,15 @@
       <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
     </extensions>
   </plugin>
+  <plugin name='Flutter2' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Flutter2:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
   <plugin name='Focus' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Focus:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
@@ -1584,6 +1746,15 @@
     </extensions>
   </plugin>
   <plugin name='Galactic2' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Galactic2:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='Galactic3' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Galactic3:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
       <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
@@ -1799,6 +1970,15 @@
       <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
     </extensions>
   </plugin>
+  <plugin name='Hypersoft' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Hypersoft:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
   <plugin name='HypersonX' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:HypersonX:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
@@ -1907,7 +2087,43 @@
       <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
     </extensions>
   </plugin>
+  <plugin name='Isolator3' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Isolator3:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
   <plugin name='Kalman' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Kalman:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='LRConvolve' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:LRConvolve:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='LRConvolve2' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:LRConvolve2:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='LRConvolve3' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:LRConvolve3:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
       <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
@@ -2034,6 +2250,24 @@
     </extensions>
   </plugin>
   <plugin name='Mackity' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Mackity:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='Mastering' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Mastering:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='Mastering2' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Mastering2:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
       <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
@@ -2717,6 +2951,15 @@
       <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
     </extensions>
   </plugin>
+  <plugin name='RingModulator' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:RingModulator:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
   <plugin name='SampleDelay' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:SampleDelay:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
@@ -2843,6 +3086,15 @@
       <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
     </extensions>
   </plugin>
+  <plugin name='SoftClock' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:SoftClock:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
   <plugin name='SoftGate' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:SoftGate:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
@@ -2871,6 +3123,15 @@
     </extensions>
   </plugin>
   <plugin name='Spiral2' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Spiral2:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='SquareRoot' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:SquareRoot:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
       <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
@@ -3023,6 +3284,15 @@
       <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
     </extensions>
   </plugin>
+  <plugin name='SweetWide' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:SweetWide:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
   <plugin name='Sweeten' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Sweeten:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
@@ -3060,6 +3330,15 @@
     </extensions>
   </plugin>
   <plugin name='Tape' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Tape:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='TapeBias' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:TapeBias:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
       <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
@@ -3150,6 +3429,24 @@
     </extensions>
   </plugin>
   <plugin name='ToTape6' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:ToTape6:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='ToTape7' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:ToTape7:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='ToTape8' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:ToTape8:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
       <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
@@ -3591,6 +3888,15 @@
     </extensions>
   </plugin>
   <plugin name='ZRegion2' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:ZRegion2:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/midi/v3" />
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v3" />
+    </extensions>
+  </plugin>
+  <plugin name='Zoom' category='Effect' developer='AAP Porting Project' unique-id='urn:airwindows:Zoom:v1' library='libaap-airwindows.so' entrypoint='GetAndroidAudioPluginFactory' gui:ui-view-factory='org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory' xmlns:gui='urn://androidaudioplugin.org/extensions/gui'>
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3" />
       <extension uri="urn://androidaudioplugin.org/extensions/state/v3" />
