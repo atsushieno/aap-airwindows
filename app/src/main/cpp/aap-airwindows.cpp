@@ -13,6 +13,7 @@ public:
     std::string pluginUniqueID;
     AndroidAudioPluginHost *host;
     AirwinRegistry::awReg& registry;
+    std::map<int32_t,float> parameter_default_values{};
     bool active{false};
     std::unique_ptr<AirwinConsolidatedBase> instance{nullptr};
     std::vector<float*> audioInputs{};
@@ -30,6 +31,11 @@ public:
         registry(registry) {
         instance = registry.generator();
         instance->setSampleRate((float) sampleRate);
+
+        // Store the initial parameter values as defaults, so that we can fill
+        // valid default values later at anytime.
+        for (size_t i = 0, n = registry.nParams; i < n; i++)
+            parameter_default_values[i] = instance->getParameter(i);
     }
 };
 
@@ -48,7 +54,7 @@ aap_parameter_info_t aap_airwindows_get_parameter(aap_parameters_extension_t* ex
     info.path[0] = '\0';
     info.min_value = 0;
     info.max_value = 1;
-    info.default_value = 0;
+    info.default_value = ctx->parameter_default_values[index];
     info.per_note_enabled = false;
     return info;
 }
