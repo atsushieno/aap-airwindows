@@ -4,3 +4,6 @@
 [submodule "external/airwin2rack"]
 	path = external/airwin2rack
 	url = https://github.com/baconpaul/airwin2rack.git
+[submodule "external/cmidi2"]
+	path = external/cmidi2
+	url = https://github.com/atsushieno/cmidi2.git

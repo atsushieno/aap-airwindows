@@ -3,7 +3,9 @@
 #include <aap/ext/state.h>
 #include <aap/ext/presets.h>
 #include <aap/ext/plugin-info.h>
+#include <aap/ext/midi.h>
 #include "AirwinRegistry.h"
+#include "cmidi2.h"
 
 class AAPAirwindowsPluginContext {
 public:
@@ -107,12 +109,49 @@ void aap_airwindows_process(
     std::vector<float*>& outputs = ctx->audioOutputs;
     for (int i = 0; i < nPorts; i++) {
         auto port = info.get_port(&info, i);
-        if (port.content_type(&port) == AAP_CONTENT_TYPE_AUDIO) {
-            auto buf = (float*) audioBuffer->get_buffer(*audioBuffer, i);
-            if (port.direction(&port) == AAP_PORT_DIRECTION_INPUT) {
-                inputs.emplace_back(buf);
-            } else {
-                outputs.emplace_back(buf);
+        switch (port.content_type(&port)) {
+            case AAP_CONTENT_TYPE_AUDIO: {
+                auto buf = (float *) audioBuffer->get_buffer(*audioBuffer, i);
+                if (port.direction(&port) == AAP_PORT_DIRECTION_INPUT) {
+                    inputs.emplace_back(buf);
+                } else {
+                    outputs.emplace_back(buf);
+                }
+                break;
+            }
+            case AAP_CONTENT_TYPE_MIDI2: {
+                auto mbh = (AAPMidiBufferHeader *) audioBuffer->get_buffer(*audioBuffer, i);
+                if (port.direction(&port) == AAP_PORT_DIRECTION_INPUT) {
+
+                    CMIDI2_UMP_SEQUENCE_FOREACH((uint8_t*) mbh + sizeof(AAPMidiBufferHeader), mbh->length, iter) {
+                        auto ump = (cmidi2_ump*) iter;
+                        switch (cmidi2_ump_get_message_type(ump)) {
+                            case CMIDI2_MESSAGE_TYPE_MIDI_2_CHANNEL: {
+                                switch (cmidi2_ump_get_status_code(ump)) {
+                                    case CMIDI2_STATUS_NRPN: {
+                                        auto index = cmidi2_ump_get_midi2_nrpn_msb(ump) * 0x100 + cmidi2_ump_get_midi2_nrpn_lsb(ump);
+                                        auto data = cmidi2_ump_get_midi2_nrpn_data(ump);
+                                        instance->setParameter(index, static_cast<float>(data / (double) UINT32_MAX));
+                                        break;
+                                    }
+                                }
+                                break;
+                            }
+                            case CMIDI2_MESSAGE_TYPE_SYSEX8_MDS: {
+                                // FIXME: verify if it is indeed AAP param sysex8
+
+                                uint8_t group{}, channel{}, key{}, extra{};
+                                uint16_t index{};
+                                float value{};
+                                aapReadMidi2ParameterSysex8(&group, &channel, &key, &extra,
+                                                            &index, &value,
+                                                            ump[0], ump[1], ump[2], ump[3]);
+                                instance->setParameter(index, value);
+                            }
+                        }
+                    }
+                }
+                break;
             }
         }
     }
@@ -160,7 +199,7 @@ AndroidAudioPlugin *aap_airwindows_plugin_new(
         name[nameSize] = '\0';
 
     auto index = AirwinRegistry::nameToIndex[name];
-    auto reg = AirwinRegistry::registry[index];
+    auto& reg = AirwinRegistry::registry[index];
 
     auto ctx = new AAPAirwindowsPluginContext(pluginFactory, pluginUniqueID, sampleRate, host, reg);
     auto ret = new AndroidAudioPlugin {

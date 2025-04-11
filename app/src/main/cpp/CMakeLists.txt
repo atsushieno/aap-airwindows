@@ -5,6 +5,8 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 project(aap-airwindows LANGUAGES CXX)
 
 set(AW2R_ROOT ${CMAKE_CURRENT_LIST_DIR}/../../../../external/airwin2rack)
+set(CMIDI2_SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}/../../../../external/cmidi2)
+get_filename_component(CMIDI2_INCLUDE_DIR ${CMIDI2_SOURCE_DIR} ABSOLUTE)
 
 file(GLOB aap-airwindows_SOURCES_GENSRC
         ${AW2R_ROOT}/src/autogen_airwin/*.cpp
@@ -33,6 +35,7 @@ target_compile_options (aap-airwindows
 target_include_directories(aap-airwindows PRIVATE
         .
         ${AW2R_ROOT}/src
+        ${CMIDI2_INCLUDE_DIR}
 )
 
 target_link_libraries (aap-airwindows
