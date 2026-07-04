@@ -22,7 +22,6 @@ public:
     AAPAirwindowsPluginContext(
         AndroidAudioPluginFactory *pluginFactory,
         const char *pluginUniqueID,
-        int sampleRate,
         AndroidAudioPluginHost *host,
         AirwinRegistry::awReg& registry) :
         pluginFactory(pluginFactory),
@@ -30,7 +29,6 @@ public:
         host(host),
         registry(registry) {
         instance = registry.generator();
-        instance->setSampleRate((float) sampleRate);
 
         // Store the initial parameter values as defaults, so that we can fill
         // valid default values later at anytime.
@@ -88,8 +86,10 @@ aap_state_extension_t state_ext;
 
 void aap_airwindows_prepare(
         struct AndroidAudioPlugin *plugin,
+        int sampleRate,
         aap_buffer_t* audioBuffer) {
-
+    auto ctx = (AAPAirwindowsPluginContext *) plugin->plugin_specific;
+    ctx->instance->setSampleRate((float) sampleRate);
 }
 
 void aap_airwindows_activate(struct AndroidAudioPlugin *plugin) {
@@ -113,11 +113,13 @@ void aap_airwindows_process(
     size_t nPorts = info.get_port_count(&info);
     std::vector<float*>& inputs = ctx->audioInputs;
     std::vector<float*>& outputs = ctx->audioOutputs;
+    inputs.clear();
+    outputs.clear();
     for (int i = 0; i < nPorts; i++) {
         auto port = info.get_port(&info, i);
         switch (port.content_type(&port)) {
             case AAP_CONTENT_TYPE_AUDIO: {
-                auto buf = (float *) audioBuffer->get_buffer(*audioBuffer, i);
+                auto buf = (float *) audioBuffer->get_buffer(audioBuffer, i);
                 if (port.direction(&port) == AAP_PORT_DIRECTION_INPUT) {
                     inputs.emplace_back(buf);
                 } else {
@@ -126,7 +128,7 @@ void aap_airwindows_process(
                 break;
             }
             case AAP_CONTENT_TYPE_MIDI2: {
-                auto mbh = (AAPMidiBufferHeader *) audioBuffer->get_buffer(*audioBuffer, i);
+                auto mbh = (AAPMidiBufferHeader *) audioBuffer->get_buffer(audioBuffer, i);
                 if (port.direction(&port) == AAP_PORT_DIRECTION_INPUT) {
 
                     CMIDI2_UMP_SEQUENCE_FOREACH((uint8_t*) mbh + sizeof(AAPMidiBufferHeader), mbh->length, iter) {
@@ -148,17 +150,20 @@ void aap_airwindows_process(
 
                                 uint8_t group{}, channel{}, key{}, extra{};
                                 uint16_t index{};
-                                float value{};
+                                uint32_t normalizedValue{};
                                 aapReadMidi2ParameterSysex8(&group, &channel, &key, &extra,
-                                                            &index, &value,
+                                                            &index, &normalizedValue,
                                                             ump[0], ump[1], ump[2], ump[3]);
-                                instance->setParameter(index, value);
+                                instance->setParameter(index, static_cast<float>(aapParameterUint32ToNormalized(normalizedValue)));
                             }
                         }
                     }
                 }
                 break;
             }
+            case AAP_CONTENT_TYPE_UNDEFINED:
+            case AAP_CONTENT_TYPE_MIDI:
+                break;
         }
     }
     instance->processReplacing(inputs.data(), outputs.data(), frameCount);
@@ -188,7 +193,6 @@ aap_plugin_info_t aap_airwindows_get_plugin_info(
 AndroidAudioPlugin *aap_airwindows_plugin_new(
         AndroidAudioPluginFactory *pluginFactory,
         const char *pluginUniqueID,
-        int sampleRate,
         AndroidAudioPluginHost *host) {
     const char* urnPrefix = "urn:airwindows:";
     const char* urnPart = strstr(pluginUniqueID, urnPrefix);
@@ -207,7 +211,7 @@ AndroidAudioPlugin *aap_airwindows_plugin_new(
     auto index = AirwinRegistry::nameToIndex[name];
     auto& reg = AirwinRegistry::registry[index];
 
-    auto ctx = new AAPAirwindowsPluginContext(pluginFactory, pluginUniqueID, sampleRate, host, reg);
+    auto ctx = new AAPAirwindowsPluginContext(pluginFactory, pluginUniqueID, host, reg);
     auto ret = new AndroidAudioPlugin {
             ctx,
             aap_airwindows_prepare,
@@ -228,7 +232,8 @@ void aap_airwindows_plugin_delete(AndroidAudioPluginFactory *, AndroidAudioPlugi
 
 AndroidAudioPluginFactory aap_factory{
     aap_airwindows_plugin_new,
-    aap_airwindows_plugin_delete
+    aap_airwindows_plugin_delete,
+    nullptr
 };
 
 AndroidAudioPluginFactory *GetAndroidAudioPluginFactory() { return &aap_factory; }
