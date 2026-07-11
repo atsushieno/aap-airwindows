@@ -28,11 +28,9 @@ jobs:
       with:
         path: /home/runner/.gradle/caches/
         key: ${{ runner.os }}-gradle-caches
-    - name: build aap-core
-      run: cd external/aap-core && ./gradlew publishToMavenLocal && cd ../..
     - name: build
       if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-      run: ./gradlew build
+      run: cd external/aap-core && ./gradlew publishToMavenLocal && cd ../.. && ./gradlew build
     - name: upload artifact
       if: success()
       uses: actions/upload-artifact@v4
