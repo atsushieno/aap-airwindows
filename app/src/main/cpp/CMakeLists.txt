@@ -8,9 +8,8 @@ set(AW2R_ROOT ${CMAKE_CURRENT_LIST_DIR}/../../../../external/airwin2rack)
 set(CMIDI2_SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}/../../../../external/cmidi2)
 get_filename_component(CMIDI2_INCLUDE_DIR ${CMIDI2_SOURCE_DIR} ABSOLUTE)
 
-file(GLOB aap-airwindows_SOURCES_GENSRC
-        ${AW2R_ROOT}/src/autogen_airwin/*.cpp
-)
+include(${AW2R_ROOT}/src/autogen_airwin/CMakeLists.txt)
+list(TRANSFORM AIRWIN_SOURCES PREPEND "${AW2R_ROOT}/")
 set(aap-airwindows_SOURCES
         ${AW2R_ROOT}/src/AirwinRegistry.cpp
         ${AW2R_ROOT}/src/airwin_consolidated_base.cpp
@@ -22,7 +21,7 @@ set(aap-airwindows_SOURCES
 add_library (aap-airwindows
         SHARED
         ${aap-airwindows_SOURCES}
-        ${aap-airwindows_SOURCES_GENSRC}
+        ${AIRWIN_SOURCES}
 )
 
 find_package(androidaudioplugin CONFIG REQUIRED)
