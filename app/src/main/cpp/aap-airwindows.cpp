@@ -80,7 +80,49 @@ aap_parameters_extension_t params_ext{
     aap_airwindows_get_enumeration
 };
 
-aap_state_extension_t state_ext;
+size_t aap_airwindows_get_state_size(aap_state_extension_t*, AndroidAudioPlugin* plugin) {
+    auto ctx = static_cast<AAPAirwindowsPluginContext*>(plugin->plugin_specific);
+    return ctx->registry.nParams * sizeof(float);
+}
+
+void aap_airwindows_get_state(aap_state_extension_t* ext, AndroidAudioPlugin* plugin, aap_state_t* state) {
+    auto ctx = static_cast<AAPAirwindowsPluginContext*>(plugin->plugin_specific);
+    auto size = aap_airwindows_get_state_size(ext, plugin);
+    if (state->data_size < size || (size && !state->data)) {
+        state->data_size = 0;
+        return;
+    }
+    for (int32_t i = 0; i < ctx->registry.nParams; ++i) {
+        float value = ctx->instance->getParameter(i);
+        memcpy(static_cast<uint8_t*>(state->data) + i * sizeof(float), &value, sizeof(value));
+    }
+    state->data_size = size;
+}
+
+void aap_airwindows_set_state(aap_state_extension_t* ext, AndroidAudioPlugin* plugin, aap_state_t* state) {
+    auto ctx = static_cast<AAPAirwindowsPluginContext*>(plugin->plugin_specific);
+    auto size = aap_airwindows_get_state_size(ext, plugin);
+    if (state->data_size != size || (size && !state->data))
+        return;
+    for (int32_t i = 0; i < ctx->registry.nParams; ++i) {
+        float value;
+        memcpy(&value, static_cast<uint8_t*>(state->data) + i * sizeof(float), sizeof(value));
+        if (!std::isfinite(value) || value < 0 || value > 1)
+            return;
+    }
+    for (int32_t i = 0; i < ctx->registry.nParams; ++i) {
+        float value;
+        memcpy(&value, static_cast<uint8_t*>(state->data) + i * sizeof(float), sizeof(value));
+        ctx->instance->setParameter(i, value);
+    }
+}
+
+aap_state_extension_t state_ext{
+    nullptr,
+    aap_airwindows_get_state_size,
+    aap_airwindows_get_state,
+    aap_airwindows_set_state
+};
 
 //----
 
@@ -195,21 +237,17 @@ AndroidAudioPlugin *aap_airwindows_plugin_new(
         const char *pluginUniqueID,
         AndroidAudioPluginHost *host) {
     const char* urnPrefix = "urn:airwindows:";
-    const char* urnPart = strstr(pluginUniqueID, urnPrefix);
-    if (urnPart == nullptr) {
-        // FIXME: log error maybe?
-        return nullptr; // invalid plugin name
-    }
-    urnPart += strlen(urnPrefix);
+    if (!pluginUniqueID || strncmp(pluginUniqueID, urnPrefix, strlen(urnPrefix)) != 0)
+        return nullptr;
+    const char* urnPart = pluginUniqueID + strlen(urnPrefix);
     auto nameEnd = strchr(urnPart, ':');
-    char name[1024];
-    size_t nameSize = nameEnd - urnPart;
-    strncpy(name, urnPart, nameSize);
-    if (nameSize < 1023)
-        name[nameSize] = '\0';
+    if (!nameEnd || nameEnd == urnPart)
+        return nullptr;
 
-    auto index = AirwinRegistry::nameToIndex[name];
-    auto& reg = AirwinRegistry::registry[index];
+    auto entry = AirwinRegistry::nameToIndex.find(std::string(urnPart, nameEnd));
+    if (entry == AirwinRegistry::nameToIndex.end())
+        return nullptr;
+    auto& reg = AirwinRegistry::registry[entry->second];
 
     auto ctx = new AAPAirwindowsPluginContext(pluginFactory, pluginUniqueID, host, reg);
     auto ret = new AndroidAudioPlugin {
